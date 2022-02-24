@@ -51,11 +51,11 @@ namespace pet_hotel.Controllers
         // }
 
         [HttpPost]
-        public ActionResult<Pet> Post(Pet pet) 
+
+        public ActionResult<Pet> Post(Pet pet)
         {
             _context.Add(pet);
             _context.SaveChanges();
-
             return pet;
         }
     }
