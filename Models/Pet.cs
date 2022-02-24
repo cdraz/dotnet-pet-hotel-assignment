@@ -44,5 +44,13 @@ namespace pet_hotel
         public int petOwnerid {get; set;}
 
         public PetOwner petOwner {get; set;}
+        public void checkInPet() 
+        {
+            this.checkedInAt = DateTime.Now;
+        }
+        public void checkOutPet()
+        {
+            this.checkedInAt = null;
+        }
     }
 }

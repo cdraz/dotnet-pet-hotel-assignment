@@ -59,7 +59,27 @@ namespace pet_hotel.Controllers
             return pet;
         }
 
-        [HttpPut]
+        [HttpPut("{id}/checkin")]
+        public IActionResult CheckIn(int id)
+        {
+            Pet petToUpdate = _context.Pets.Find(id);
+            petToUpdate.checkInPet();
+            _context.Pets.Update(petToUpdate);
+            _context.SaveChanges();
+
+            return Ok(petToUpdate);
+        }
+
+        [HttpPut("{id}/checkout")]
+        public IActionResult CheckOut(int id)
+        {
+            Pet petToUpdate = _context.Pets.Find(id);
+            petToUpdate.checkOutPet();
+            _context.Pets.Update(petToUpdate);
+            _context.SaveChanges();
+
+            return Ok(petToUpdate);
+        }
 
         [HttpDelete("{id}")]
         public void Delete(int id) {
