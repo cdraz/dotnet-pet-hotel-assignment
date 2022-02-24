@@ -6,12 +6,6 @@ namespace dotnet_bakery.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "name",
-                table: "Pets",
-                type: "text",
-                nullable: false,
-                defaultValue: "");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pets_petOwnerid",
@@ -35,10 +29,6 @@ namespace dotnet_bakery.Migrations
 
             migrationBuilder.DropIndex(
                 name: "IX_Pets_petOwnerid",
-                table: "Pets");
-
-            migrationBuilder.DropColumn(
-                name: "name",
                 table: "Pets");
         }
     }
