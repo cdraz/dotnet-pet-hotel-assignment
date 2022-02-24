@@ -59,6 +59,8 @@ namespace pet_hotel.Controllers
             return pet;
         }
 
+        [HttpPut]
+
         [HttpDelete("{id}")]
         public void Delete(int id) {
             Pet pet = _context.Pets.Find(id);
