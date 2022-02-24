@@ -49,5 +49,14 @@ namespace pet_hotel.Controllers
 
         //     return new List<Pet>{ newPet1, newPet2};
         // }
+
+        [HttpPost]
+        public ActionResult<Pet> Post(Pet pet) 
+        {
+            _context.Add(pet);
+            _context.SaveChanges();
+
+            return pet;
+        }
     }
 }
