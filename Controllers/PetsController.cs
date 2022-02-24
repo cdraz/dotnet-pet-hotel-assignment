@@ -51,6 +51,7 @@ namespace pet_hotel.Controllers
         // }
 
         [HttpPost]
+
         public ActionResult<Pet> Post(Pet pet)
         {
             _context.Add(pet);
